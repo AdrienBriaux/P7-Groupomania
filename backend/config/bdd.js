@@ -1,4 +1,4 @@
-const { Sequelize } = require('sequelize');
+const Sequelize = require('sequelize');
 
 // Connection à la base de données
 
@@ -9,19 +9,23 @@ const sequelize = new Sequelize(process.env.DATABASE_NAME, process.env.DATABASE_
     logging: false, //passer a true pour voir les différentes requêtes effectuées par l'ORM
 });
 
+testConnect();
+
 // On test si la connexion est OK
+async function testConnect() {
+    try {
 
-try {
+        await sequelize.authenticate();
+        console.log('Connection has been established successfully.');
+    }
 
-    await sequelize.authenticate();
-    console.log('Connection has been established successfully.');
-}
+    catch (error) {
 
-catch (error) {
-    
-    console.error('Unable to connect to the database:', error);
-}
+        console.error('Unable to connect to the database:', error);
+    }
+};
 
 // On exporte pour utiliser notre connexion depuis les autres fichiers.
 
 module.exports = sequelize;
+global.sequelize = sequelize;
