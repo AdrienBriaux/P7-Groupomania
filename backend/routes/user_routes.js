@@ -11,6 +11,6 @@ router.post('/signup', userCtrl.signup);
 router.post('/login', userCtrl.login);
 
 // Route pour supprimer son compte
-router.delete('');
+router.delete('', userCtrl.deleteAccount);
 
 module.exports = router;
