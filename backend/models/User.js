@@ -4,14 +4,15 @@ const sequelize = require('sequelize');
 
 const userschema = sequelize.define('utilisateur', {
 
-    id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
-    nom: { type: Sequelize.STRING(255), allowNull: false, },
-    prenom: { type: Sequelize.STRING(255), allowNull: false, },
-    email: { type: Sequelize.STRING(255), allowNull: false, unique: true },
-    password: { type: Sequelize.STRING(255), allowNull: false, }
+    id: { type: sequelize.INTEGER, autoIncrement: true, primaryKey: true },
+    nom: { type: sequelize.STRING(255), allowNull: false },
+    prenom: { type: sequelize.STRING(255), allowNull: false },
+    email: { type: sequelize.STRING(255), allowNull: false, unique: true },
+    password: { type: sequelize.STRING(255), allowNull: false }
 },
 
     { tableName: 'utilisateur', timestamps: false, underscored: true }
 );
+
 
 exports = userschema;

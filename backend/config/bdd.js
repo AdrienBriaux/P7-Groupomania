@@ -11,4 +11,4 @@ const sequelize = new Sequelize('database', 'username', 'password', {
 
 // On exporte pour utiliser notre connexion depuis les autre fichiers.
 
-module.exports.sequelize = sequelize;
+exports = sequelize;

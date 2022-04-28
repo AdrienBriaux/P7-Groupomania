@@ -4,14 +4,10 @@ const sequelize = require('sequelize');
 
 const postSchema = new sequelize.define('postSchema', {
 
-    nom: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    prenom: {
-        type: DataTypes.STRING,
-        allowNull: false
-    }
-})
+    id: { type: sequelize.INTEGER, autoIncrement: true, primaryKey: true },
+    data: { type: [sequelize.STRING(600)], allowNull: false },
+},
+    { tableName: 'role', timestamps: false, underscored: true }
+);
 
 exports = postSchema;
