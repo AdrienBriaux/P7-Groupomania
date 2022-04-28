@@ -3,7 +3,7 @@ const sequelize = new Sequelize('sqlite::memory:');
 
 // Création du schèma utilisateur
 
-const userModel = sequelize.define('userModel', {
+const userSchema = sequelize.define('userModel', {
 
     id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
     nom: { type: DataTypes.STRING(255), allowNull: false },
@@ -16,4 +16,4 @@ const userModel = sequelize.define('userModel', {
 );
 
 
-module.exports = userModel;
+module.exports = userSchema;

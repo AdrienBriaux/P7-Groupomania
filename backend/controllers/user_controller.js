@@ -79,3 +79,8 @@ exports.login = (req, res, next) => {
 
         .catch(error => res.status(500).json({ error }));
 };
+
+// Controleur suppression du compte
+exports.deleteAccount = (req, res, next) => {
+
+}
