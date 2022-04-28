@@ -1,18 +1,19 @@
-const sequelize = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
+const sequelize = new Sequelize('sqlite::memory:');
 
 // Création du schèma utilisateur
 
-const userschema = sequelize.define('utilisateur', {
+const userModel = sequelize.define('userModel', {
 
-    id: { type: sequelize.INTEGER, autoIncrement: true, primaryKey: true },
-    nom: { type: sequelize.STRING(255), allowNull: false },
-    prenom: { type: sequelize.STRING(255), allowNull: false },
-    email: { type: sequelize.STRING(255), allowNull: false, unique: true },
-    password: { type: sequelize.STRING(255), allowNull: false }
+    id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
+    nom: { type: DataTypes.STRING(255), allowNull: false },
+    prenom: { type: DataTypes.STRING(255), allowNull: false },
+    email: { type: DataTypes.STRING(255), allowNull: false, unique: true },
+    password: { type: DataTypes.STRING(255), allowNull: false }
 },
 
     { tableName: 'utilisateur', timestamps: false, underscored: true }
 );
 
 
-exports = userschema;
+module.exports = userModel;
