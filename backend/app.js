@@ -1,5 +1,5 @@
 const express = require('express');
-
+require('./config/bdd');
 const app = express();
 const userRoutes = require('./routes/user_routes');
 const postRoutes = require('./routes/post_routes');
@@ -8,7 +8,7 @@ const postRoutes = require('./routes/post_routes');
 require('./config/bdd');
 
 // Mise à disposition des routes utilisateur
-app.use('/api', userRoutes);
+app.use('/api/user', userRoutes);
 
 // Mise à disposition des routes pour les posts
 app.use('/api/post', postRoutes);

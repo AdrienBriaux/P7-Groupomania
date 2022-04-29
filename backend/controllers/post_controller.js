@@ -1,7 +1,10 @@
+const bddConfig = require('../config/bdd');
+
 const Post = require('../models/Post');
 const fs = require('fs');
 
-exports.addPost = (req, res, next) => {
+exports.createPost = (req, res, next) => {
+
 
 };
 
