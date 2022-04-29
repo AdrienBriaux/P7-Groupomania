@@ -1,8 +1,9 @@
 const Sequelize = require('sequelize');
-
+const dotenv = require('dotenv');
+dotenv.config({ path: './env' });
 // Connection à la base de données
 
-const sequelize = new Sequelize(process.env.DATABASE_NAME, process.env.DATABASE_USERNAME, process.env.DATABASE_PASSWORD, {
+const sequelize = new Sequelize('Groupomania_Socialnetwork', 'root', 'TheSkyIsBlue28!', {
 
     host: 'localhost',
     dialect: 'mysql',
