@@ -1,18 +1,20 @@
-const sequelize = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
+const sequelize = new Sequelize('mysql::memory:');
 
 // Création du schèma utilisateur
 
-const userschema = sequelize.define('utilisateur', {
+const userSchema = sequelize.define('userSchema', {
 
-    id: { type: sequelize.INTEGER, autoIncrement: true, primaryKey: true },
-    nom: { type: sequelize.STRING(255), allowNull: false },
-    prenom: { type: sequelize.STRING(255), allowNull: false },
-    email: { type: sequelize.STRING(255), allowNull: false, unique: true },
-    password: { type: sequelize.STRING(255), allowNull: false }
+    user_id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
+    admin: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false },
+    user_first_name: { type: DataTypes.STRING(255), allowNull: false },
+    user_last_name: { type: DataTypes.STRING(255), allowNull: false },
+    user_email: { type: DataTypes.STRING(255), allowNull: false, unique: true },
+    user_password: { type: DataTypes.STRING(255), allowNull: false }
 },
 
-    { tableName: 'utilisateur', timestamps: false, underscored: true }
+    { tableName: 'user', timestamps: false, underscored: true } // Par default "tableName" serait "user" (au pluriel), "timestamps" créé 2 champs automatique pour les dates de création et de modification (très pratique si nécessaire) et "underscored" permet de créer automatiquement des champs de "relation" entre les tables de type "role_id" plutôt que "UserId".
 );
 
 
-exports = userschema;
+module.exports = userSchema;

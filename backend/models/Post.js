@@ -1,14 +1,16 @@
-const sequelize = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
+const sequelize = new Sequelize('mysql::memory:');
 
 // Création schèma d'un post
 
-const postSchema = new sequelize.define('postSchema', {
+const postSchema = sequelize.define('postSchema', {
 
-    id: { type: sequelize.INTEGER, autoIncrement: true, primaryKey: true },
-    data: { type: [sequelize.STRING(600)], allowNull: false },
-    likes: { type: sequelize.NUMBER(500), allowNull: true }
+    id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
+    content: { type: DataTypes.STRING(200), allowNull: true },
+    comment: { type: DataTypes.STRING(500), allowNull: false },
+    like: { type: DataTypes.NUMBER(100), allowNull: true, defaultValue: 0 },
 },
     { tableName: 'post', timestamps: true, underscored: true }
 );
 
-exports = postSchema;
+module.exports = postSchema;
