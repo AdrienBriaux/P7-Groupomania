@@ -13,7 +13,7 @@ const userSchema = sequelize.define('userSchema', {
     user_password: { type: DataTypes.STRING(255), allowNull: false }
 },
 
-    { tableName: 'users', timestamps: false, underscored: true } // Par default "tableName" serait "roles" (au pluriel), "timestamps" crée 2 champs automatique pour les dates de création et de modification (très pratique si nécessaire) et "underscored" permet de créer automatiquement des champs de "relation" entre les tables de type "role_id" plutôt que "UserId".
+    { tableName: 'user', timestamps: false, underscored: true } // Par default "tableName" serait "user" (au pluriel), "timestamps" créé 2 champs automatique pour les dates de création et de modification (très pratique si nécessaire) et "underscored" permet de créer automatiquement des champs de "relation" entre les tables de type "role_id" plutôt que "UserId".
 );
 
 

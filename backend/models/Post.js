@@ -5,9 +5,9 @@ const sequelize = new Sequelize('sqlite::memory:');
 
 const postSchema = sequelize.define('postSchema', {
 
-    post_id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
-    post_image: { type: DataTypes.STRING(200), allowNull: true },
-    post_comment: { type: DataTypes.STRING(500), allowNull: false },
+    id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
+    content: { type: DataTypes.STRING(200), allowNull: true },
+    comment: { type: DataTypes.STRING(500), allowNull: false },
 },
     { tableName: 'post', timestamps: true, underscored: true }
 );
