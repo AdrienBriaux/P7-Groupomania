@@ -21,7 +21,7 @@ module.exports = (req, res, next) => {
 
             return res.status(403).json({
 
-                error: 'unauthorized request'
+                message: 'unauthorized request'
             });
         }
 
@@ -36,7 +36,7 @@ module.exports = (req, res, next) => {
 
         res.status(401).json({
 
-            error: new Error('Invalid request or token expired')
+            message: 'Invalid request or token expired'
         });
     }
 };
