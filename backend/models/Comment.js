@@ -1,7 +1,7 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = new Sequelize('sqlite::memory:');
 
-// Création du schéma d'un like
+// Création du schéma d'un commentaire
 const commentSchema = sequelize.define('commentSchema', {
 
     id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
