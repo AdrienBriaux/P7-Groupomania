@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 
 // Connection à la base de données
 
-const bdd = new Sequelize('Groupomania_Socialnetwork', 'root', 'TheSkyIsBlue28!', {
+const bdd = new Sequelize('groupomania_socialnetwork', 'root', 'TheSkyIsBlue28!', {
 
     host: 'localhost',
     dialect: 'mysql',
