@@ -8,7 +8,7 @@ const imageSchema = sequelize.define('imageSchema', {
     id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
     content: { type: DataTypes.STRING(100), allowNull: false },
 },
-    { tableName: 'data', timestamps: false, underscored: true }
+    { tableName: 'image', timestamps: false, underscored: true }
 );
 
 module.exports = imageSchema;

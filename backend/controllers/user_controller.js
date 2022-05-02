@@ -6,7 +6,7 @@ const User = require('../models/User');
 
 exports.signup = (req, res, next) => {
 
-    // On Hache le mot de passe avec bcrypt
+    // On hache le mot de passe avec bcrypt
 
     bcrypt.hash(req.body.password, 10)
 
@@ -16,6 +16,8 @@ exports.signup = (req, res, next) => {
 
             const user = new User({
 
+                first_name: req.body.first_name,
+                Last_name: req.body.last_name,
                 email: req.body.email,
                 password: hash
             });

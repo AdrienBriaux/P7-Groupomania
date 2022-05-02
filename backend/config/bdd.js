@@ -2,20 +2,20 @@ const Sequelize = require('sequelize');
 
 // Connection à la base de données
 
-const sequelize = new Sequelize('Groupomania_Socialnetwork', 'root', 'TheSkyIsBlue28!', {
+const bdd = new Sequelize('Groupomania_Socialnetwork', 'root', 'TheSkyIsBlue28!', {
 
     host: 'localhost',
     dialect: 'mysql',
-    logging: false, //passer a true pour voir les différentes requêtes effectuées par l'ORM
+    logging: false, // Passer a true pour voir les différentes requêtes effectuées par l'ORM
 });
 
 testConnect();
 
-// On test si la connexion est OK
+// On teste si la connexion est OK
 async function testConnect() {
     try {
 
-        await sequelize.authenticate();
+        await bdd.authenticate();
         console.log('Connection has been established successfully.');
     }
 
@@ -27,5 +27,5 @@ async function testConnect() {
 
 // On exporte pour utiliser notre connexion depuis les autres fichiers.
 
-module.exports = sequelize;
-global.sequelize = sequelize;
+module.exports = bdd;
+global.sequelize = bdd;

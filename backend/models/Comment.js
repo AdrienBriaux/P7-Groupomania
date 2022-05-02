@@ -6,7 +6,7 @@ const sequelize = new Sequelize('mysql::memory:');
 const commentSchema = sequelize.define('commentSchema', {
 
     id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
-    content: { type: DataTypes.STRING(250), allowNull: false },
+    content: { type: DataTypes.STRING(500), allowNull: false },
 },
     { tableName: 'comment', timestamps: true, underscored: true }
 );
