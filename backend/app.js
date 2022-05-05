@@ -16,7 +16,7 @@ app.use((req, res, next) => {
     next();
 });
 
-// DB connection
+// DB connexion
 require('./config/bdd');
 
 // Mise à disposition des routes utilisateur

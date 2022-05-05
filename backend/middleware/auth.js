@@ -17,7 +17,7 @@ module.exports = (req, res, next) => {
 
         // Si le user ID envoyer correspond à l'user ID encodé dans le token
 
-        if (req.body.userId && req.body.userId !== userId) {
+        if (req.body.userId !== userId) {
 
             return res.status(403).json({
 
