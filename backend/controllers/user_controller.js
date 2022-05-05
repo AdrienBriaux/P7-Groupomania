@@ -17,7 +17,6 @@ exports.signup = (req, res, next) => {
 
             User.create({
 
-                admin: req.body.admin,
                 first_name: req.body.first_name,
                 last_name: req.body.last_name,
                 email: req.body.email,

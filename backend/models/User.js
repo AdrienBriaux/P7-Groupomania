@@ -6,7 +6,7 @@ const sequelize = require('../config/bdd');
 const userSchema = sequelize.define('userSchema', {
 
     id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
-    admin: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false },
+    admin: { type: DataTypes.BOOLEAN, allowNull: true, defaultValue: false },
     first_name: { type: DataTypes.STRING(255), allowNull: false },
     last_name: { type: DataTypes.STRING(255), allowNull: false },
     email: { type: DataTypes.STRING(255), allowNull: false, unique: true },
