@@ -2,8 +2,8 @@ const Sequelize = require('sequelize');
 const dotenv = require('dotenv');
 dotenv.config();
 // Connection à la base de données
-
-const bdd = new Sequelize(process.env.DATABASE_NAME, process.env.DATABASE_USERNAME, process.env.DATABASE_PASSWORD, {
+console.log(process.env)
+const sequelize = new Sequelize(process.env.DATABASE_NAME, process.env.DATABASE_USERNAME, process.env.DATABASE_PASSWORD, {
 
     host: 'localhost',
     dialect: 'mysql',
@@ -16,7 +16,7 @@ testConnect();
 async function testConnect() {
     try {
 
-        await bdd.authenticate();
+        await sequelize.authenticate();
         console.log('Connection has been established successfully.');
     }
 
@@ -28,5 +28,4 @@ async function testConnect() {
 
 // On exporte pour utiliser notre connexion depuis les autres fichiers.
 
-module.exports = bdd;
-global.sequelize = bdd;
+module.exports = sequelize;

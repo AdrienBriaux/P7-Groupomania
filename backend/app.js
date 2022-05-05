@@ -4,6 +4,11 @@ const app = express();
 const userRoutes = require('./routes/user_routes');
 const postRoutes = require('./routes/post_routes');
 const cors = require('cors');
+const sequelize = require('./config/bdd')
+sequelize.sync({ force: true });
+
+// Convertion des réponses en JSON
+app.use(express.json());
 
 // Gestion des requêtes avec CORS
 app.use(cors());
@@ -25,8 +30,6 @@ app.use('/api/user', userRoutes);
 // Mise à disposition des routes pour les posts
 app.use('/api/post', postRoutes);
 
-// Convertion des réponses en JSON
-app.use(express.json());
 
 // Mise à disposition du contenu images
 app.use('/images', express.static(path.join(__dirname, 'images')));
