@@ -1,5 +1,5 @@
 const webToken = require('jsonwebtoken');
-
+const dotenv = require('dotenv');
 module.exports = (req, res, next) => {
 
     try {
@@ -8,7 +8,7 @@ module.exports = (req, res, next) => {
 
         // On vérifie que le token possédé par l'utilisateur à été créé avec la même clé secrète
 
-        const decodedToken = webToken.verify(token, process.env.SecretKey);
+        const decodedToken = webToken.verify(token, process.env.SECRET_KEY);
 
         // On récupére le user Id contenu dans le token 
 

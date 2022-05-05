@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 const webToken = require('jsonwebtoken');
-
+const dotenv = require('dotenv');
 const User = require('../models/User');
 
 // Controleur création d'utilisateur
@@ -22,6 +22,7 @@ exports.signup = (req, res, next) => {
                 email: req.body.email,
                 password: hash
             })
+
 
                 .then(() => res.status(201).json({ message: 'Utilisateur créé !' }))
                 .catch(error => res.status(400).json({ error }));
@@ -71,7 +72,7 @@ exports.login = (req, res, next) => {
                         // On créer un token d'identification qui sera retourné
 
                         token: webToken.sign({ userId: user.id },
-                            process.env.SecretKey,
+                            process.env.SECRET_KEY,
                             { expiresIn: '2h' })
                     });
                 })
@@ -86,4 +87,29 @@ exports.login = (req, res, next) => {
 exports.deleteAccount = (req, res, next) => {
 
 
+};
+
+// Controleur pour récupérer un utilisateur
+exports.getOneUser = (req, res, next) => {
+
+    const userId = req.params.id;
+    User.findByPK(userId)
+
+        .then(user => {
+
+            if (!user) {
+
+                return res.status(404).json({ message: "User not found" });
+            }
+
+            res.status(200).json({
+
+                admin: user.admin,
+                first_name: user.first_name,
+                last_name: user.last_name,
+                email: user.email
+            })
+        })
+
+        .catch(error => res.status(500).json({ error }));
 };

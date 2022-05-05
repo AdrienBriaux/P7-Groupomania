@@ -14,4 +14,8 @@ router.post('/login', userCtrl.login);
 // Route pour supprimer son compte
 router.delete('/deleteAccount', auth, userCtrl.deleteAccount);
 
+// Route pour prendre un utilisateur
+
+router.get('/:id', auth, userCtrl.getOneUser);
+
 module.exports = router;
