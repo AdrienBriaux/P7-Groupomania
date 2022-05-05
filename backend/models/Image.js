@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+const DataTypes = require('sequelize');
 const sequelize = require('../config/bdd');
 
 // Création du schéma d'une image
@@ -6,7 +6,7 @@ const sequelize = require('../config/bdd');
 const imageSchema = sequelize.define('imageSchema', {
 
     id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
-    content: { type: DataTypes.STRING(100), allowNull: false },
+    content: { type: DataTypes.STRING(100), allowNull: false }
 },
     { tableName: 'image', timestamps: false, underscored: true }
 );

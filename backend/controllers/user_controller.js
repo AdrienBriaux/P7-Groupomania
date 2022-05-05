@@ -1,7 +1,8 @@
 const bcrypt = require('bcrypt');
 const webToken = require('jsonwebtoken');
-const dotenv = require('dotenv');
+
 const User = require('../models/User');
+
 
 // Controleur création d'utilisateur
 
@@ -73,7 +74,7 @@ exports.login = (req, res, next) => {
 
                         token: webToken.sign({ userId: user.id },
                             process.env.SECRET_KEY,
-                            { expiresIn: '2h' })
+                            { expiresIn: '24h' })
                     });
                 })
 
@@ -93,6 +94,13 @@ exports.deleteAccount = (req, res, next) => {
 exports.getOneUser = (req, res, next) => {
 
     const userId = req.params.id;
+
+
+    if (userId !== req.auth.userId) {
+
+        return res.status(403).json({ error: new Error('403: unauthorized request') })
+    }
+
     User.findByPK(userId)
 
         .then(user => {
@@ -104,7 +112,6 @@ exports.getOneUser = (req, res, next) => {
 
             res.status(200).json({
 
-                admin: user.admin,
                 first_name: user.first_name,
                 last_name: user.last_name,
                 email: user.email

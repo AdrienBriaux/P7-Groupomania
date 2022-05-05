@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+const DataTypes = require('sequelize');
 const sequelize = require('../config/bdd');
 
 // Création du schéma d'un commentaire
@@ -6,7 +6,7 @@ const sequelize = require('../config/bdd');
 const commentSchema = sequelize.define('commentSchema', {
 
     id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
-    content: { type: DataTypes.STRING(500), allowNull: false },
+    content: { type: DataTypes.STRING(500), allowNull: false }
 },
     { tableName: 'comment', timestamps: true, underscored: true }
 );

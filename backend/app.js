@@ -4,7 +4,9 @@ const app = express();
 const userRoutes = require('./routes/user_routes');
 const postRoutes = require('./routes/post_routes');
 const cors = require('cors');
-const sequelize = require('./config/bdd')
+const sequelize = require('./config/bdd');
+
+// Synchronisation des models sequelize
 sequelize.sync({ force: true });
 
 // Convertion des réponses en JSON
