@@ -24,8 +24,8 @@ exports.signup = (req, res, next) => {
                 password: hash
             })
 
-
-                .then(() => res.status(201).json({ message: 'Utilisateur créé !' }))
+        
+            then(() => res.status(201).json({ message: 'Utilisateur créé !' }))
                 .catch(error => res.status(400).json({ error }));
 
             // On sauvegarde l'objet utilisateur

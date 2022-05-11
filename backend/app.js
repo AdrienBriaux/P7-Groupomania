@@ -7,7 +7,7 @@ const cors = require('cors');
 const sequelize = require('./config/bdd');
 
 // Synchronisation des models sequelize
-sequelize.sync({ force: true });
+sequelize.sync({ force: false });
 
 // Convertion des réponses en JSON
 app.use(express.json());

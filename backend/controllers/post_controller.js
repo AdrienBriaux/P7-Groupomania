@@ -4,14 +4,14 @@ const fs = require('fs');
 
 exports.createPost = (req, res, next) => {
 
-    const postObject = JSON.parse(req.body.post);
+    const postObject = req.body;
     delete postObject.id;
 
     Post.create({
 
         ...postObject,
-        content: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`,
-        comment: [],
+        /*content: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`,*/
+        comment: "",
         like: 0
     })
 
