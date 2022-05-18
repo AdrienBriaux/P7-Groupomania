@@ -1,15 +1,15 @@
 <template>
 
-    <form @submit="handleLogin">
+    <form class="identification" @onclick="btn__login">
 
         <div class="form-group">
             <label for="email">Email</label>
-            <input name="email" type="email" class="form-control" />
+            <input name="email" type="email" class="form-control" placeholder="Entrez votre email" />
         </div>
 
         <div class="form-group">
             <label for="password">Mot de passe</label>
-            <input name="password" type="password" class="form-control" />
+            <input name="password" type="password" class="form-control" placeholder="Entrez votre mot de passe" />
         </div>
 
         <div class="form-group">
@@ -20,13 +20,48 @@
 
     </form>
 
-</template>
-<script>
+    <p>Pas de compte ? <a href="http://localhost:8080/register"> S'inscrire</a></p>
 
+</template>
+
+<script>
 
 export default {
 
-    name: 'LoginView'
+    name: "LoginView",
 }
 
 </script>
+
+<style scoped>
+.identification {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    max-width: 600px;
+    background-color: darkgrey;
+    text-align: center;
+}
+
+label {
+
+    margin: 5px 0px;
+}
+
+.form-group {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.form-group,
+input {
+
+    border-radius: 30px;
+    max-width: 400px;
+}
+</style>

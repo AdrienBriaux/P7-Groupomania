@@ -1,15 +1,12 @@
 <template>
-  <div class="home">
-
+  <div class="btn-identification">
+    
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'HomeView',
-  components: {
-
-  }
+  name: 'btn-idenfication',
 }
 </script>
+
