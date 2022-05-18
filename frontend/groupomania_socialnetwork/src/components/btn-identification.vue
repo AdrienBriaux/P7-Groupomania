@@ -1,7 +1,7 @@
 <template>
-  <div class="btn-identification">
-    
-  </div>
+  <button class="btn-identification">
+
+  </button>
 </template>
 
 <script>

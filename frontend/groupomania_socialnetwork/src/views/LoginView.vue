@@ -1,7 +1,6 @@
 <template>
 
     <form class="identification" @onclick="btn__login">
-
         <div class="form-group">
             <label for="email">Email</label>
             <input name="email" type="email" class="form-control" placeholder="Entrez votre email" />
@@ -47,7 +46,7 @@ export default {
 
 label {
 
-    margin: 5px 0px;
+    margin: 8px 0px;
 }
 
 .form-group {
@@ -58,10 +57,15 @@ label {
 
 }
 
-.form-group,
 input {
 
     border-radius: 30px;
     max-width: 400px;
+}
+
+p {
+    max-width: 600px;
+    margin: auto;
+    padding: 10px 0px;
 }
 </style>
