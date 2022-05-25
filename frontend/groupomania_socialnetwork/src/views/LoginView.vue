@@ -1,5 +1,9 @@
 <template>
 
+    <header>
+        <img src="../assets/icon-above-font.png">
+    </header>
+
     <form class="identification" @onclick="btn__login">
         <div class="form-group">
             <label for="email">Email</label>
@@ -67,5 +71,16 @@ p {
     max-width: 600px;
     margin: auto;
     padding: 10px 0px;
+}
+
+.btn__login {
+
+    margin: 10px 0px;
+}
+
+header {
+
+    display: flex;
+    justify-content: center;
 }
 </style>

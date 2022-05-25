@@ -1,5 +1,9 @@
 <template>
 
+    <header>
+        <img src="../assets/icon-above-font.png">
+    </header>
+
     <Form class="identification" @onclick="btn__signup">
 
         <div class="form-group">
@@ -8,15 +12,15 @@
         </div>
         <div class="form-group">
             <label for="last_name">Prénom</label>
-            <input name="last_name" type="text" class="form-control" placeholder="Entrez votre prénom"/>
+            <input name="last_name" type="text" class="form-control" placeholder="Entrez votre prénom" />
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input name="email" type="email" class="form-control" placeholder="Entrez votre email"/>
+            <input name="email" type="email" class="form-control" placeholder="Entrez votre email" />
         </div>
         <div class="form-group">
             <label for="password">Mot de passe</label>
-            <input name="password" type="password" class="form-control" placeholder="Entrez votre mot de passe"/>
+            <input name="password" type="password" class="form-control" placeholder="Entrez votre mot de passe" />
         </div>
 
         <div class="form-group">
@@ -39,7 +43,6 @@ export default {
 </script>
 
 <style scoped>
-
 .identification {
 
     display: flex;
@@ -55,6 +58,7 @@ label {
 
     margin: 5px 0px;
 }
+
 .form-group {
 
     display: flex;
@@ -70,5 +74,14 @@ input {
     max-width: 400px;
 }
 
+.btn__signup {
 
+    margin: 10px 0px;
+}
+
+header {
+
+    display: flex;
+    justify-content: center;
+}
 </style>
