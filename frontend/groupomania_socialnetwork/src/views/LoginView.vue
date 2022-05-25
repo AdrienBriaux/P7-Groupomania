@@ -1,8 +1,8 @@
 <template>
 
-    <header>
-        <img src="../assets/icon-above-font.png">
-    </header>
+    <headerComponent>
+
+    </headerComponent>
 
     <form class="identification" @onclick="btn__login">
         <div class="form-group">
@@ -29,9 +29,11 @@
 
 <script>
 
+import headerComponent from '../components/headerComponent.vue'
 export default {
 
     name: "LoginView",
+    components: { headerComponent }
 }
 
 </script>

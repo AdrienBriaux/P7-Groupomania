@@ -1,8 +1,8 @@
 <template>
 
-    <header>
-        <img src="../assets/icon-above-font.png">
-    </header>
+    <headerComponentVue>
+
+    </headerComponentVue>
 
     <Form class="identification" @onclick="btn__signup">
 
@@ -34,10 +34,13 @@
 </template>
 
 <script>
+import headerComponentVue from '../components/headerComponent.vue';
+
 
 export default {
 
     name: 'RegisterView',
+    components: { headerComponentVue }
 }
 
 </script>
